@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Task Completion App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <header class="py-4 bg-primary text-white text-center neumorphism">
+  <h1>Daily Task Completion App</h1>
+  <p>Stay organized and achieve your daily goals!</p>
+  <button id="darkModeToggle" class="btn btn-light"><i class="fas fa-moon"></i> Dark Mode</button>
+  </header>
+
+  <main class="container mt-4">
+  <section id="taskFormSection" class="neumorphism p-4 mb-4">
+  <h2>Add New Task</h2>
+  <form id="taskForm">
+  <div class="form-group">
+  <label for="taskTitle">Title</label>
+  <input type="text" class="form-control" id="taskTitle" placeholder="Task Title" required>
+  <div class="invalid-feedback">Please enter a task title.</div>
+  </div>
+  <div class="form-group">
+  <label for="taskDescription">Description</label>
+  <textarea class="form-control" id="taskDescription" rows="3" placeholder="Task Description"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="taskPriority">Priority</label>
+  <select class="form-control" id="taskPriority">
+  <option value="low">Low</option>
+  <option value="medium">Medium</option>
+  <option value="high">High</option>
+  </select>
+  </div>
+  <div class="form-group">
+  <label for="taskCategory">Category</label>
+  <select class="form-control" id="taskCategory">
+  <option value="work">Work</option>
+  <option value="personal">Personal</option>
+  <option value="home">Home</option>
+  </select>
+  </div>
+  <div class="form-group">
+  <label for="taskDueDate">Due Date</label>
+  <input type="date" class="form-control" id="taskDueDate">
+  </div>
+  <button type="submit" class="btn btn-primary">Add Task</button>
+  </form>
+  </section>
+
+  <section id="taskListSection" class="neumorphism p-4 mb-4">
+  <h2>Today's Tasks</h2>
+  <div id="taskList" class="row">
+  <!-- Tasks will be dynamically added here -->
+  </div>
+  </section>
+
+  <section id="completedTasksSection" class="neumorphism p-4 mb-4">
+  <h2>Completed Tasks</h2>
+  <div id="completedTaskList">
+  <!-- Completed tasks will be dynamically added here -->
+  </div>
+  </section>
+
+  <section id="statisticsSection" class="neumorphism p-4 mb-4">
+  <h2>Task Completion Statistics</h2>
+  <p>Tasks Completed: <span id="tasksCompletedCount">0</span></p>
+  </section>
+  </main>
+
+  <footer class="py-3 bg-dark text-white text-center">
+  &copy; 2024 Daily Task Completion App | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a>
+  </footer>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="script.js"></script>
+ </body>
+ </html>

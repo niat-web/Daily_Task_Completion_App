@@ -1,0 +1,224 @@
+/* style.css */
+
+ :root {
+  --bg-color: #ecf0f3;
+  --text-color: #333;
+  --primary-color: #3498db;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --inner-shadow-color: rgba(255, 255, 255, 0.7);
+  --yellow-color: #f39c12; /* Added yellow */
+ }
+
+ .dark-mode {
+  --bg-color: #2c3e50;
+  --text-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --inner-shadow-color: rgba(0, 0, 0, 0.7);
+ }
+
+ body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+ }
+
+ /* Neumorphism Style */
+ .neumorphism {
+  border-radius: 10px;
+  background: var(--bg-color);
+  box-shadow: 5px 5px 10px var(--shadow-color),
+  -5px -5px 10px var(--inner-shadow-color);
+ }
+
+ .neumorphism:hover {
+  box-shadow: 3px 3px 6px var(--shadow-color),
+  -3px -3px 6px var(--inner-shadow-color);
+ }
+
+ /* Header */
+ header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+
+ header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+ }
+
+ header p {
+  font-size: 1.1rem;
+ }
+
+ /* Dark Mode Toggle */
+ #darkModeToggle {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 2px 2px 5px var(--shadow-color),
+  -2px -2px 5px var(--inner-shadow-color);
+ }
+
+ #darkModeToggle:hover {
+  background-color: #ddd;
+ }
+
+ /* Task Form */
+ #taskFormSection {
+  padding: 20px;
+  margin-bottom: 20px;
+ }
+
+ #taskForm label {
+  font-weight: bold;
+  color: var(--text-color);
+ }
+
+ #taskForm .form-control {
+  border-radius: 8px;
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: inset 2px 2px 5px var(--shadow-color),
+  inset -2px -2px 5px var(--inner-shadow-color);
+ }
+
+ /* Task List */
+ #taskListSection {
+  padding: 20px;
+  margin-bottom: 20px;
+ }
+
+ .task-card {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: var(--bg-color);
+  box-shadow: 3px 3px 6px var(--shadow-color),
+  -3px -3px 6px var(--inner-shadow-color);
+  transition: transform 0.2s;
+ }
+
+ .task-card:hover {
+  transform: translateY(-3px);
+ }
+
+ .task-card h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+ }
+
+ .task-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+ }
+
+ .task-card .priority {
+  font-weight: bold;
+ }
+
+ .task-card .priority.high {
+  color: red;
+ }
+
+ .task-card .priority.medium {
+  color: orange;
+ }
+
+ .task-card .priority.low {
+  color: green;
+ }
+
+ /* Completed Tasks */
+ #completedTasksSection {
+  padding: 20px;
+  margin-bottom: 20px;
+ }
+
+ #completedTaskList {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  box-shadow: inset 2px 2px 5px var(--shadow-color),
+  inset -2px -2px 5px var(--inner-shadow-color);
+ }
+
+ #completedTaskList p {
+  margin-bottom: 5px;
+  color: var(--text-color);
+ }
+
+ /* Statistics Section */
+ #statisticsSection {
+  padding: 20px;
+  margin-bottom: 20px;
+ }
+
+ /* Footer */
+ footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 15px 15px 0 0;
+ }
+
+ /* Notification */
+ .notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+ }
+
+ /* Utility Classes */
+ .mt-4 {
+  margin-top: 24px;
+ }
+
+ .mb-4 {
+  margin-bottom: 24px;
+ }
+
+ .p-4 {
+  padding: 24px;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+  header h1 {
+  font-size: 2rem;
+  }
+
+  #taskFormSection,
+  #taskListSection,
+  #completedTasksSection,
+  #statisticsSection {
+  padding: 15px;
+  }
+ }
+ 
+ .btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+ }
+ 
+ .btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+  border-color: darken(var(--primary-color), 10%);
+ }
